@@ -22,7 +22,6 @@ body {
   font-family: var(--font);
   color: var(--slate-900);
   background: #F7F7F9;
-  overflow-x: hidden;
 }
 
 .text-preset-1 {

@@ -135,25 +135,24 @@ nav {
   background-color: var(--white);
 }
 
-main {
-  padding: 0 32px;
-}
-
 .hero {
   padding: 64px 0 32px 0;
+  width: 100vw;
 }
 .hero .banner {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 17px;
+  overflow: hidden;
 }
-.hero .banner img {
-  width: 100%;
+.hero .banner > img {
+  width: 50vw;
 }
 .hero .banner > img:first-child {
-  margin-left: -20%;
+  transform: translateX(-2vw);
 }
 .hero .banner > img:last-child {
-  margin-right: -20%;
+  transform: translateX(2vw);
 }
 .hero .hero-text-content {
   display: flex;
@@ -162,6 +161,7 @@ main {
   text-align: center;
   margin-top: 48px;
   gap: 24px;
+  padding: 0 32px;
 }
 .hero .hero-buttons {
   display: flex;
@@ -176,7 +176,7 @@ main {
   justify-content: center;
   align-items: center;
   gap: 64px;
-  padding: 32px 0 64px 0;
+  padding: 32px 32px 64px 32px;
 }
 .main-content .gallery {
   display: grid;
@@ -243,6 +243,64 @@ footer .container .text-content {
   position: absolute;
   inset: 0;
   color: var(--white);
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero .hero-text-content {
+    max-width: 448px;
+  }
+  .hero .hero-buttons {
+    flex-direction: row;
+  }
+  .main-content .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .main-content .text-content {
+    max-width: 504px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero {
+    position: relative;
+    width: 100vw;
+  }
+  .hero .banner {
+    grid-template-columns: 1fr minmax(448px, 600px) 1fr;
+    padding: 0;
+    justify-items: end;
+    gap: 150px;
+  }
+  .hero .banner > img {
+    width: 100%;
+  }
+  .hero .banner > img:last-child {
+    grid-column: 3;
+  }
+  .hero .hero-text-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 448px;
+  }
+  footer .container .text-content {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  footer .container .text-content h2 {
+    text-align: left;
+    width: 300px;
+  }
+  footer .container .text-content p {
+    text-align: left;
+    width: 320px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

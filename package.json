@@ -1,4 +1,12 @@
 {
+  "name": "meet-landing-page",
+  "version": "1.0.0",
+  "description": "Meet landing page - Frontend Mentor challenge",
+  "scripts": {
+    "build": "cd docs && sass style.scss style.css",
+    "watch": "cd docs && sass --watch style.scss style.css",
+    "dev": "cd docs && python -m http.server 8000"
+  },
   "devDependencies": {
     "sass": "^1.91.0"
   }
